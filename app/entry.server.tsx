@@ -15,6 +15,11 @@ export default async function handleRequest(
   reactRouterContext: EntryContext
 ) {
   addDocumentResponseHeaders(request, responseHeaders);
+  responseHeaders.delete("X-Frame-Options");
+  responseHeaders.set(
+    "Content-Security-Policy",
+    "frame-ancestors https://admin.shopify.com https://*.myshopify.com;"
+  );
   const userAgent = request.headers.get("user-agent");
   const callbackName = isbot(userAgent ?? '')
     ? "onAllReady"

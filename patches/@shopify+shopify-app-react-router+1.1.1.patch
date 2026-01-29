@@ -1,0 +1,28 @@
+diff --git a/node_modules/@shopify/shopify-app-react-router/dist/cjs/server/authenticate/admin/helpers/render-app-bridge.js b/node_modules/@shopify/shopify-app-react-router/dist/cjs/server/authenticate/admin/helpers/render-app-bridge.js
+index 3f3ffc8..9ceebac 100644
+--- a/node_modules/@shopify/shopify-app-react-router/dist/cjs/server/authenticate/admin/helpers/render-app-bridge.js
++++ b/node_modules/@shopify/shopify-app-react-router/dist/cjs/server/authenticate/admin/helpers/render-app-bridge.js
+@@ -9,8 +9,7 @@ function renderAppBridge({ config }, request, redirectTo) {
+     let redirectToScript = '';
+     if (redirectTo) {
+         const destination = validateRedirectUrl.sanitizeRedirectUrl(config.appUrl, redirectTo.url);
+-        const target = redirectTo.target ?? '_top';
+-        redirectToScript = `<script>window.open(${JSON.stringify(destination.toString())}, ${JSON.stringify(target)})</script>`;
++        redirectToScript = `<div id="redirect" data-url="${encodeURI(destination.toString())}"></div><script>window.top.location.href = decodeURI(document.getElementById('redirect').dataset.url);</script>`;
+     }
+     const responseHeaders = new Headers({
+         'content-type': 'text/html;charset=utf-8',
+diff --git a/node_modules/@shopify/shopify-app-react-router/dist/esm/server/authenticate/admin/helpers/render-app-bridge.mjs b/node_modules/@shopify/shopify-app-react-router/dist/esm/server/authenticate/admin/helpers/render-app-bridge.mjs
+index e884ae0..e28c682 100644
+--- a/node_modules/@shopify/shopify-app-react-router/dist/esm/server/authenticate/admin/helpers/render-app-bridge.mjs
++++ b/node_modules/@shopify/shopify-app-react-router/dist/esm/server/authenticate/admin/helpers/render-app-bridge.mjs
+@@ -7,8 +7,7 @@ function renderAppBridge({ config }, request, redirectTo) {
+     let redirectToScript = '';
+     if (redirectTo) {
+         const destination = sanitizeRedirectUrl(config.appUrl, redirectTo.url);
+-        const target = redirectTo.target ?? '_top';
+-        redirectToScript = `<script>window.open(${JSON.stringify(destination.toString())}, ${JSON.stringify(target)})</script>`;
++        redirectToScript = `<div id="redirect" data-url="${encodeURI(destination.toString())}"></div><script>window.top.location.href = decodeURI(document.getElementById('redirect').dataset.url);</script>`;
+     }
+     const responseHeaders = new Headers({
+         'content-type': 'text/html;charset=utf-8',

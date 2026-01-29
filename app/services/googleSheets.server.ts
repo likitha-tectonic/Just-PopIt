@@ -453,6 +453,155 @@ export class GoogleSheetsService {
       created_at: row.get('created_at'),
     }));
   }
+
+  /**
+   * Create or update a template
+   */
+  async upsertTemplate(templateData: any): Promise<string> {
+    if (!this.doc) throw new Error('Not connected to spreadsheet');
+
+    const sheet = this.doc.sheetsByTitle['Templates'];
+    if (!sheet) throw new Error('Templates sheet not found');
+
+    const templateId = templateData.template_id || uuidv4();
+    const rows = await sheet.getRows();
+    const existing = rows.find((row: any) => row.get('template_id') === templateId);
+    const now = new Date().toISOString();
+
+    const payload = {
+      template_id: templateId,
+      name: templateData.name || '',
+      description: templateData.description || '',
+      category: templateData.category || '',
+      layout_type: templateData.layout_type || '',
+      preview_image_url: templateData.preview_image_url || '',
+      content_json: JSON.stringify(templateData.content || templateData.content_json || {}),
+      style_json: JSON.stringify(templateData.style || templateData.style_json || {}),
+      default_triggers_json: JSON.stringify(templateData.default_triggers || templateData.default_triggers_json || []),
+      default_dismissals_json: JSON.stringify(templateData.default_dismissals || templateData.default_dismissals_json || []),
+      is_system_template: templateData.is_system_template ? 'TRUE' : 'FALSE',
+      created_at: templateData.created_at || now,
+    };
+
+    if (existing) {
+      Object.entries(payload).forEach(([key, value]) => {
+        existing.set(key, value as any);
+      });
+      await existing.save();
+      return templateId;
+    }
+
+    await sheet.addRow(payload);
+    return templateId;
+  }
+
+  /**
+   * Get all display triggers for a popup (or all)
+   */
+  async getDisplayTriggers(popupId?: string): Promise<any[]> {
+    if (!this.doc) throw new Error('Not connected to spreadsheet');
+
+    const sheet = this.doc.sheetsByTitle['DisplayTriggers'];
+    if (!sheet) throw new Error('DisplayTriggers sheet not found');
+
+    const rows = await sheet.getRows();
+    const filtered = popupId ? rows.filter((row: any) => row.get('popup_id') === popupId) : rows;
+    return filtered.map((row: any) => ({
+      trigger_id: row.get('trigger_id'),
+      popup_id: row.get('popup_id'),
+      trigger_group_id: row.get('trigger_group_id'),
+      group_logic: row.get('group_logic'),
+      trigger_category: row.get('trigger_category'),
+      trigger_type: row.get('trigger_type'),
+      operator: row.get('operator'),
+      value: row.get('value'),
+      secondary_value: row.get('secondary_value'),
+      enabled: row.get('enabled') === 'TRUE',
+      created_at: row.get('created_at'),
+    }));
+  }
+
+  /**
+   * Create a display trigger
+   */
+  async createDisplayTrigger(triggerData: any): Promise<string> {
+    if (!this.doc) throw new Error('Not connected to spreadsheet');
+
+    const sheet = this.doc.sheetsByTitle['DisplayTriggers'];
+    if (!sheet) throw new Error('DisplayTriggers sheet not found');
+
+    const triggerId = uuidv4();
+    const now = new Date().toISOString();
+
+    await sheet.addRow({
+      trigger_id: triggerId,
+      popup_id: triggerData.popup_id || '',
+      trigger_group_id: triggerData.trigger_group_id || '',
+      group_logic: triggerData.group_logic || 'AND',
+      trigger_category: triggerData.trigger_category || '',
+      trigger_type: triggerData.trigger_type || '',
+      operator: triggerData.operator || '',
+      value: triggerData.value || '',
+      secondary_value: triggerData.secondary_value || '',
+      enabled: triggerData.enabled ? 'TRUE' : 'FALSE',
+      created_at: now,
+    });
+
+    return triggerId;
+  }
+
+  /**
+   * Get all dismissal triggers for a popup (or all)
+   */
+  async getDismissalTriggers(popupId?: string): Promise<any[]> {
+    if (!this.doc) throw new Error('Not connected to spreadsheet');
+
+    const sheet = this.doc.sheetsByTitle['DismissalTriggers'];
+    if (!sheet) throw new Error('DismissalTriggers sheet not found');
+
+    const rows = await sheet.getRows();
+    const filtered = popupId ? rows.filter((row: any) => row.get('popup_id') === popupId) : rows;
+    return filtered.map((row: any) => ({
+      dismissal_id: row.get('dismissal_id'),
+      popup_id: row.get('popup_id'),
+      trigger_type: row.get('trigger_type'),
+      trigger_subtype: row.get('trigger_subtype'),
+      value: row.get('value'),
+      dismissal_type: row.get('dismissal_type'),
+      temporary_settings_json: row.get('temporary_settings_json')
+        ? JSON.parse(row.get('temporary_settings_json'))
+        : {},
+      enabled: row.get('enabled') === 'TRUE',
+      created_at: row.get('created_at'),
+    }));
+  }
+
+  /**
+   * Create a dismissal trigger
+   */
+  async createDismissalTrigger(triggerData: any): Promise<string> {
+    if (!this.doc) throw new Error('Not connected to spreadsheet');
+
+    const sheet = this.doc.sheetsByTitle['DismissalTriggers'];
+    if (!sheet) throw new Error('DismissalTriggers sheet not found');
+
+    const dismissalId = uuidv4();
+    const now = new Date().toISOString();
+
+    await sheet.addRow({
+      dismissal_id: dismissalId,
+      popup_id: triggerData.popup_id || '',
+      trigger_type: triggerData.trigger_type || '',
+      trigger_subtype: triggerData.trigger_subtype || '',
+      value: triggerData.value || '',
+      dismissal_type: triggerData.dismissal_type || '',
+      temporary_settings_json: JSON.stringify(triggerData.temporary_settings || {}),
+      enabled: triggerData.enabled ? 'TRUE' : 'FALSE',
+      created_at: now,
+    });
+
+    return dismissalId;
+  }
 }
 
 // Export singleton instance

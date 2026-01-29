@@ -1,5 +1,5 @@
 import { AppProvider } from "@shopify/shopify-app-react-router/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
 import { Form, useActionData, useLoaderData } from "react-router";
 
@@ -8,8 +8,10 @@ import { loginErrorMessage } from "./error.server";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const errors = loginErrorMessage(await login(request));
+  const url = new URL(request.url);
+  const embedded = url.searchParams.get("embedded") === "1";
 
-  return { errors };
+  return { errors, embedded, apiKey: process.env.SHOPIFY_API_KEY || "" };
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
@@ -25,9 +27,20 @@ export default function Auth() {
   const actionData = useActionData<typeof action>();
   const [shop, setShop] = useState("");
   const { errors } = actionData || loaderData;
+  const { embedded, apiKey } = loaderData;
+
+  useEffect(() => {
+    if (!embedded || typeof window === "undefined") return;
+
+    if (window.top !== window.self) {
+      const redirectUrl = new URL(window.location.href);
+      redirectUrl.searchParams.delete("embedded");
+      window.top.location.href = redirectUrl.toString();
+    }
+  }, [embedded]);
 
   return (
-    <AppProvider embedded={false}>
+    <AppProvider embedded={embedded} apiKey={embedded ? apiKey : undefined}>
       <s-page>
         <Form method="post">
         <s-section heading="Log in">

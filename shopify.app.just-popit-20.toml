@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "d4364c91a40b41c0e456baeb7b7b8cff"
-name = "Just-PopIt"
-application_url = "https://example.com"
+client_id = "a0f8d7e4fef49a71af18c8f70f742d37"
+name = "Just-PopIt 2.0"
+application_url = "https://alfred-distinguished-cheese-travelers.trycloudflare.com"
 embedded = true
 
 [webhooks]
@@ -11,9 +11,13 @@ api_version = "2026-04"
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
+optional_scopes = [ ]
+use_legacy_install_flow = false
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://alfred-distinguished-cheese-travelers.trycloudflare.com/api/auth"
+]
 
 [build]
 automatically_update_urls_on_dev = true
