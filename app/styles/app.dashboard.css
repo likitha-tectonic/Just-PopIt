@@ -1,0 +1,137 @@
+.jp-shell {
+  padding-top: 12px;
+}
+
+.jp-tabPanel {
+  padding-top: 16px;
+}
+
+.jp-shell :global(.Polaris-Button--variantPrimary) {
+  background: #1d741b;
+  border-color: #1d741b;
+}
+
+.jp-shell :global(.Polaris-Button--variantPrimary:hover) {
+  background: #8fa01f;
+  border-color: #8fa01f;
+}
+
+.jp-shell :global(.Polaris-Button--variantSecondary) {
+  border-color: #8fa01f;
+  color: #1d741b;
+}
+
+.jp-shell :global(.Polaris-Badge) {
+  background: #8bcd50;
+  color: #0f1f0e;
+}
+
+.jp-ruleSummary {
+  display: inline-block;
+  max-width: 680px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jp-miniList {
+  display: grid;
+  gap: 10px;
+}
+
+.jp-miniListItem {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(29, 116, 27, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.jp-miniListItem:hover {
+  border-color: rgba(29, 116, 27, 0.45);
+}
+
+.jp-miniListItemTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.jp-miniListItemName {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.jp-miniListItemBadge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(222, 217, 62, 0.35);
+  text-transform: capitalize;
+}
+
+.jp-miniListItemSub {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.55);
+  line-height: 16px;
+}
+
+.jp-previewFrame {
+  border: 1px solid rgba(29, 116, 27, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.jp-previewCanvas {
+  padding: 18px;
+  background: rgba(139, 205, 80, 0.08);
+}
+
+.jp-popupMock {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid rgba(29, 116, 27, 0.18);
+  background: #ffffff;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 10px 24px rgba(29, 116, 27, 0.14);
+}
+
+.jp-popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.jp-popupCtaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 880px) {
+  .jp-ruleSummary {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 560px) {
+  .jp-ruleSummary {
+    max-width: 240px;
+  }
+
+  .jp-popupMock {
+    padding: 14px;
+    border-radius: 14px;
+  }
+}

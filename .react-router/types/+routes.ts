@@ -20,6 +20,12 @@ type Pages = {
   "/webhooks/app/uninstalled": {
     params: {};
   };
+  "/preview/dashboard": {
+    params: {};
+  };
+  "/preview/popups": {
+    params: {};
+  };
   "/auth/login": {
     params: {};
   };
@@ -52,7 +58,15 @@ type Pages = {
   "/app/popups/new": {
     params: {};
   };
+  "/app/popups/new/:templateId": {
+    params: {
+      "templateId": string;
+    };
+  };
   "/app/api/setup": {
+    params: {};
+  };
+  "/app/dashboard": {
     params: {};
   };
 };
@@ -60,7 +74,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/webhooks/app/scopes_update" | "/webhooks/app/uninstalled" | "/auth/login" | "/auth/*" | "/app" | "/app/api/triggers/dismissal" | "/app/api/triggers/display" | "/app/api/templates" | "/app/popups" | "/app/additional" | "/app/api/popups" | "/app/popups/new" | "/app/api/setup";
+    page: "/" | "/webhooks/app/scopes_update" | "/webhooks/app/uninstalled" | "/preview/dashboard" | "/preview/popups" | "/auth/login" | "/auth/*" | "/app" | "/app/api/triggers/dismissal" | "/app/api/triggers/display" | "/app/api/templates" | "/app/popups" | "/app/additional" | "/app/api/popups" | "/app/popups/new" | "/app/popups/new/:templateId" | "/app/api/setup" | "/app/dashboard";
   };
   "routes/webhooks.app.scopes_update.tsx": {
     id: "routes/webhooks.app.scopes_update";
@@ -69,6 +83,14 @@ type RouteFiles = {
   "routes/webhooks.app.uninstalled.tsx": {
     id: "routes/webhooks.app.uninstalled";
     page: "/webhooks/app/uninstalled";
+  };
+  "routes/preview.dashboard.tsx": {
+    id: "routes/preview.dashboard";
+    page: "/preview/dashboard";
+  };
+  "routes/preview.popups.tsx": {
+    id: "routes/preview.popups";
+    page: "/preview/popups";
   };
   "routes/auth.login/route.tsx": {
     id: "routes/auth.login";
@@ -84,7 +106,7 @@ type RouteFiles = {
   };
   "routes/app.tsx": {
     id: "routes/app";
-    page: "/app" | "/app/api/triggers/dismissal" | "/app/api/triggers/display" | "/app/api/templates" | "/app/popups" | "/app/additional" | "/app/api/popups" | "/app/popups/new" | "/app/api/setup";
+    page: "/app" | "/app/api/triggers/dismissal" | "/app/api/triggers/display" | "/app/api/templates" | "/app/popups" | "/app/additional" | "/app/api/popups" | "/app/popups/new" | "/app/popups/new/:templateId" | "/app/api/setup" | "/app/dashboard";
   };
   "routes/app.api.triggers.dismissal.tsx": {
     id: "routes/app.api.triggers.dismissal";
@@ -112,11 +134,19 @@ type RouteFiles = {
   };
   "routes/app.popups.new.tsx": {
     id: "routes/app.popups.new";
-    page: "/app/popups/new";
+    page: "/app/popups/new" | "/app/popups/new/:templateId";
+  };
+  "routes/app.popups.new.$templateId.tsx": {
+    id: "routes/app.popups.new.$templateId";
+    page: "/app/popups/new/:templateId";
   };
   "routes/app.api.setup.tsx": {
     id: "routes/app.api.setup";
     page: "/app/api/setup";
+  };
+  "routes/app.dashboard.tsx": {
+    id: "routes/app.dashboard";
+    page: "/app/dashboard";
   };
   "routes/app._index.tsx": {
     id: "routes/app._index";
@@ -128,6 +158,8 @@ type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/webhooks.app.scopes_update": typeof import("./app/routes/webhooks.app.scopes_update.tsx");
   "routes/webhooks.app.uninstalled": typeof import("./app/routes/webhooks.app.uninstalled.tsx");
+  "routes/preview.dashboard": typeof import("./app/routes/preview.dashboard.tsx");
+  "routes/preview.popups": typeof import("./app/routes/preview.popups.tsx");
   "routes/auth.login": typeof import("./app/routes/auth.login/route.tsx");
   "routes/_index": typeof import("./app/routes/_index/route.tsx");
   "routes/auth.$": typeof import("./app/routes/auth.$.tsx");
@@ -139,6 +171,8 @@ type RouteModules = {
   "routes/app.additional": typeof import("./app/routes/app.additional.tsx");
   "routes/app.api.popups": typeof import("./app/routes/app.api.popups.tsx");
   "routes/app.popups.new": typeof import("./app/routes/app.popups.new.tsx");
+  "routes/app.popups.new.$templateId": typeof import("./app/routes/app.popups.new.$templateId.tsx");
   "routes/app.api.setup": typeof import("./app/routes/app.api.setup.tsx");
+  "routes/app.dashboard": typeof import("./app/routes/app.dashboard.tsx");
   "routes/app._index": typeof import("./app/routes/app._index.tsx");
 };

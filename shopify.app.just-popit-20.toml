@@ -2,8 +2,11 @@
 
 client_id = "a0f8d7e4fef49a71af18c8f70f742d37"
 name = "Just-PopIt 2.0"
-application_url = "https://alfred-distinguished-cheese-travelers.trycloudflare.com"
+application_url = "https://library-table-nhs-assistant.trycloudflare.com"
 embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2026-04"
@@ -16,8 +19,7 @@ use_legacy_install_flow = false
 
 [auth]
 redirect_urls = [
-  "https://alfred-distinguished-cheese-travelers.trycloudflare.com/api/auth"
+  "https://library-table-nhs-assistant.trycloudflare.com/api/auth",
+  "https://library-table-nhs-assistant.trycloudflare.com/api/auth/callback",
+  "https://library-table-nhs-assistant.trycloudflare.com/auth/callback"
 ]
-
-[build]
-automatically_update_urls_on_dev = true
