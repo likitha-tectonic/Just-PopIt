@@ -1,0 +1,123 @@
+COMPETITOR RESEARCH DOCUMENT: SHOPIFY POP-UP ECOSYSTEM (2026)\
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--\
+PURPOSE: Reference for PM/Engineering to define MVP feature set and
+triggers.\
+FOCUS: Core Capabilities, Trigger Logic, and Impact Metrics.\
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--\
+\
+PART 1: NON-APP STORE COMPETITORS (SCRIPT-BASED INSTALLS)\
+These apps are often chosen by high-volume brands to bypass Shopify App
+Store\
+limitations and for deeper custom JS control.\
+\
+1. WISEPOPS\
+- Description: High-end conversion platform focusing on non-intrusive
+UI.\
+- Core Capabilities:\
+\* The Notification Feed: A social-media style \"inbox\" (fixed sidebar)
+that\
+houses multiple non-modal notifications/offers.\
+\* AI-Driven Product Recos: Dynamically injects \"Bestsellers\" or
+\"Frequently\
+Bought Together\" items directly into the popup based on browser
+history.\
+\* Advanced Targeting: Logic based on Shopify-specific Liquid
+variables:\
+Cart total, specific Product ID in cart, and Customer Tags.\
+\* Multi-Campaign Stacking: Allows running a sticky bar, a central
+modal,\
+and a feed simultaneously with collision-prevention rules.\
+- Impact Assessment:\
+\* CTR: The Notification Feed sees a 10-12% engagement rate as it
+doesn\'t\
+interrupt the user flow.\
+\* Conversion %: Personalized AI recommendations within popups increase\
+attributed revenue by \~39% compared to static offers.\
+- Pricing Slabs:\
+\* Free Trial: 14 days.\
+\* Paid (\$49/mo): 50k pageviews. Includes A/B testing and Klaviyo
+sync.\
+\* Enterprise (\$250+/mo): Custom CSS/JS callbacks and headless
+support.\
+\
+2. SLEEKNOTE\
+- Description: Focuses on \"on-page assistance\" and high-intent lead
+gen.\
+- Core Capabilities:\
+\* Multi-Step Logic: \"Micro-conversions\" (e.g., Step 1: \"Are you
+shopping\
+for Men or Women?\" -\> Step 2: Specific email opt-in for that
+segment).\
+\* SiteData Integration: Real-time trigger based on custom data layers\
+(e.g., weather at visitor location, inventory levels).\
+\* Page-Level Target Groups: Groups rules (e.g., \"Show if URL contains\
+/shoes/ AND visitor is from Instagram\").\
+- Impact Assessment:\
+\* Conversion %: Multi-step forms increase sign-up rates by \~30% by
+reducing\
+initial friction.\
+\* Bounce Rate: Lower on-load bounce rate due to delayed
+\"scroll-depth\"\
+triggering (typically set at 30-50% scroll).\
+- Pricing Slabs:\
+\* Lite (€49/mo): 25k visitors. All basic triggers.\
+\* Premium (€114/mo+): Adds Gamification (Spin-to-win) and A/B testing.\
+\
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--\
+\
+PART 2: SHOPIFY APP STORE NATIVES (DETAILED ANALYSIS)\
+\
+1. PRIVY POP UPS\
+- Description: The market leader for \"Conversion + Email + SMS\"
+bundle.\
+- Core Capabilities:\
+\* Exit-Intent Technology: Precision detection of mouse-out or
+back-button\
+gestures to trigger a \"Save your cart\" modal.\
+\* Cross-Sell Modals: Triggered when a specific item is added to cart,\
+suggesting a complementary item with a 1-click \"Add to Cart\" button.\
+\* Automatic Coupon Injection: Displays a unique discount code only
+after\
+email submission, with a \"Click to Copy\" function.\
+\* Floating Tabs: Small \"teaser\" tabs that live on the edge of the
+screen\
+to re-open the popup if closed.\
+- Impact Assessment:\
+\* CTR: Average 3-5% on exit-intent popups.\
+\* Conversion %: Spin-to-Win (Gamification) leads to 2x-3x higher
+opt-in\
+rates compared to static forms.\
+- Pricing Slabs:\
+\* Free: Up to 100 mailable contacts. Basic layouts.\
+\* Conversion Only (\$24/mo): Removes Privy branding, unlimited
+displays,\
+A/B testing, and cart-value targeting.\
+\* Growth Plan (\$45/mo): Adds SMS capture and automated email
+sequences.\
+\
+2. POP CONVERT\
+- Description: Focused on \"Smart Bars\" and lightweight notification
+elements.\
+- Core Capabilities:\
+\* Smart Bars: Dynamic header/footer bars for free shipping thresholds\
+(e.g., \"Spend \$20 more for free shipping\").\
+\* Interaction-Based Modals: Triggered by clicks on specific site
+elements\
+(e.g., clicking a \"Size Guide\" triggers a newsletter pop-up).\
+\* Geometric Customization: Allows \"Shape\" based popups (circles,
+bubbles)\
+to stand out from standard square modals.\
+\* Social Proof Integration: Can show \"Recent Purchase\" notifications\
+within the popup flow.\
+- Impact Assessment:\
+\* CTR: High for \"Mystery Coupons\" (users click to reveal a random
+discount).\
+\* Average Order Value (AOV): Smart Bars for shipping thresholds see a\
+measurable 10-15% lift in AOV.\
+- Pricing Slabs:\
+\* Free: 1,000 unique visitors/mo. Basic banners and popups.\
+\* Pro (\$29/mo): Unlimited visitors, advanced triggers, and removal of\
+Pop Convert branding.\
+\* Gamification Add-on (\$13/mo): Specific access to interactive games
+like\
+Scratch Cards and Wheels.\

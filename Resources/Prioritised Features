@@ -1,0 +1,62 @@
+The goal is to design and implement a Shopify App that enables store owners or app users to easily create, configure, and manage custom pop-ups for their Shopify storefronts.
+
+ These pop-ups can serve multiple use cases including: 
+1. Promotional pop-ups (Nth visit, season-based, time-based) 
+2. User onboarding pop-ups (sign-up, social media follow)
+3. Data input or profile collection forms
+4.  Referral and credit info pop-ups 
+5. Gamification or interactive event-based pop-ups 
+6. App download prompts 
+7. Collection or page redirection pop-ups 
+8. FTUE tutorial or guidance 
+9. Cookie consent and preferences 
+10. Product comparison
+11. Quick filters Inventory, price, and discount alerts 
+12. Product highlights, urgency, and social proof 
+13. Exit intent, cart abandonment, and discount timer pop-ups 
+14. Out-of-stock alerts, cart confirmation, and cross-sell suggestions 
+15. Payment gateway authorization or confirmation pop-ups 
+
+The app should be compatible with Online Store 2.0 themes and render via theme app extensions or injected scripts. 
+
+All subsequent instructions will define the requirements to be captured in the PRD to be generated
+
+# **Technical** Triggers 
+Connection speed Bandwidth usage Cookie status Local storage availability JavaScript enablement Ad blocker detection Browser permissions Cache status Session storage API response timing Resource loading status Service worker status Progressive web app status Push notification status Geolocation availability Browser features support 
+
+ALL POSSIBLE FEATURES 
+Display Triggers
+	 - Session Based Triggers 
+	- Source based Trigger 
+	- Referral Source (Ad Campaign- meta , Google, UTM), Organic, Direct, 
+	- Referral - Landing page - Page Type Based: HP, PLP, PDP - 
+	- URL Based: specific Collection, specific Product 
+	- Platform Type Based: Desktop, mweb, App 
+	- Browser type, Multi Tab browsing (comparison pop-ups, inventory callout, price change triggers), page reload 	
+	- Saved Cookie preferences - Visit Time Based (Peak shopping hours, time of day, sale campaigns, day of week, season or holiday period) 
+	- Page Visit Based (based on user current data storage events - current url, previous url, product view, category browse, preferences and user historical data, page type (covering all website pages)) 
+- User action based triggers (scroll depth %, mouse hover/ long press, mouse idle for X time, add to cart, remove from cart, wishlist, product view, filter or sort, size chart, mini pdp view,variant selection, search bar focus, review section interaction, form field, form exit, webiste exit, checkout exit) 
+- Cart based triggers (cart amount, basket size threshold, cart items inventory, discount availability, payment method selection, shipping cost)
+ - User Cohort Based Triggers 
+	- User history
+	 - User geolocation 
+	- Cookie Preference 
+	- Time Based Triggers (Seconds after page load, time on website, time inactive, X seconds after dismissal of last pop up) 
+- Product Based Triggers (inventory, previously purchased items, belonging to certain attribute/ category/ discount bucket) 
+- Pop up impression based triggers and series triggers 
+
+Dismissal - Time Based Dismissal Trigger - X second after display, countdown timer completion - User action based - Click Based (Click on close button, click outside modal, click on specific element) and Keyboard based (Exc key, enter/return key, any key) - Navigation based - Page Change, navigation to specific URL - State Change - Profile updated, product added (to order, cart, wishlist), product successfully removed (cart, wishlist), promo code (successfully applied, or copied), successful login - Page Based trigger - Page refresh, scroll to specific locaiton on page, scroll past pop-up 
+
+TYPES: Permanent Dismissal (session and user based, utm based) and Temporary Dismissal (collapse into preview, re-appearance trigger) 
+Animation - Entrance, exit, user action based (microanimations, transfer animations), time based Gestures - Swipe (up/down/top/bottom) - Double Tap / Double Click - Click (within the modal button, outside the modal) - pinch in / pinch out - long press 
+
+Pop-up Placement - w.r.t viewport - w.r.t page - w.r.t preview 
+
+Overlay 
+	- non interactive background (lightbox pop-up) (background assets, image, gif configurable transparency and colour) 
+	- Interactable background elements (sticky/fixed, scroll bound (moves in / out with page scroll) 
+	- Layering capabilities (wrt z index and other elements) 
+
+Pop-up Previews - Interaction types, positioning, layering, visibility, display, animation , drag actions, 
+Progress Storage (Pop-up series) - ability to diable or enable progress storage 
+Data Recall - Account identifier and any detail in previous popups

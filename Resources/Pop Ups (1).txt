@@ -1,0 +1,387 @@
+﻿Pop ups
+- Customer value proposition
+    - Improved/Mandatory engagement
+    - Minimised layout interference to present new content
+- Why now?
+    - Other growth lever enablement
+    - ⬆️
+ Impact/Effort Ratio
+- Business value proposition
+    - Tablestakes
+- Goals
+    - Content spotlighting
+    - Temporal targetting
+- Principles
+    - Trigger based initiation
+    - Integration led
+    - Platform/Page agnostic
+- High level Implementation
+    - Growth lever
+        - Paginated Pop ups
+        - Stacked Pop ups
+            - Refer slack ‘Catch up’ section for ref
+        - Pop up series
+            - Trigger of subsequent pop ups is defined in the previous pop up
+    - Modal
+        - To be display medium of other growth levers
+- Features
+    - Display Triggers
+        - Session based triggers
+            - Source based triggers
+                - Referral source
+                    - Ad
+                        - Meta
+                        - Google
+                        - Campaign tags
+                            - UTM source
+                            - UTM Medium
+                            - ...
+                    - Organic
+                    - Direct
+                    - P2P Referral
+                    - Offline
+                - Landing page based
+                    - Page type based
+                        - Home 
+                        - PLP
+                        - PDP
+                        - ..
+                    - URL based
+                        - specific collection
+                        - specific product
+                - Platform type
+                    - Desktop
+                    - Mweb
+                    - App
+                - Browser type
+                - Multi-tab browsing
+                    - Product comparison pop up
+                    - Price change pop up
+                    - Inventory callout pop ups
+                - Saved cookie preferences
+            - Visit time based
+                - Specific discount(s) running
+                - Time zone
+                - Time of day
+                - Day of week
+                - Peak shopping hours
+                - Season/holiday period
+            - Page visit based triggers
+                - Current URL
+                - Previous URL
+                - Previous widget slug
+                - URL query parameters
+                - Product view sequence
+                - Category browse pattern
+                - Search term patterns
+                - Filter usage patterns
+                - Sort preference
+                - Price range browsing
+                - Brand affinity
+                - Size selection pattern
+                - Style preference
+                - Color preference
+                - Review reading pattern
+                - Social proof interaction
+                - Page Type
+                    - Home page
+                    - Collection page
+                    - PDP
+                    - Search results page
+                    - Login/Sign up pages
+                    - Account page
+                    - Blog page
+                    - Checkout page
+                    - Thank you page
+                    - Misc.
+                        - Terms and Conditions
+                        - Policy pages
+                        - Contact us
+                        - Referral Program
+            - User action triggers
+                - Scroll depth reached (25%, 50%, 75%, 100%)
+                - Mouse hover/long press over specific element
+                - Mouse idle for X seconds
+                - Multiple clicks on same element
+                - Add to cart action
+                - Remove from cart action
+                - Wishlist addition
+                - Product quick view
+                - Filter/sort usage
+                - Product image gallery interaction
+                - Size chart view
+                - Mini pdp view
+                - Product variant selection
+                - Search bar focus
+                - Review section interaction
+                    - Write a review button click
+                    - Review UGC view
+                - Form field interaction
+                - Form exit
+                - Preview click
+                - Website exit button click
+            - Cart based triggers
+                - Cart value threshold
+                - basket size threshold
+                - Discount applicability
+                - Shipping threshold proximity
+                - Cartline items inventory availability
+                - Payment method selection
+        - User cohort triggers
+            - Product price range affinity
+            - Brand affinity
+            - Color preference
+            - Cookies preference
+            - Style preference
+            - Time since last visit
+            - Seasonal shopping pattern
+            - User with social proof affinity
+            - Previous feature usage history
+            - Payment preference
+            - Shipping preference
+            - Shipping location based
+            - Cohorts with certain missing profile info
+            - Coupon usage history
+        - Time based triggers
+            - Seconds after page load
+            - Seconds on site
+            - Inactive time within session
+            - X seconds after dismissal of last pop up
+        - Product based triggers
+            - Low inventory
+            - Previously purchased item
+            - Belongs to a certain category/type/attribute/discount bucket
+        - Pop up impression based triggers
+            - Session impression
+            - User impression
+        - Series triggers
+    - Dismissal
+        - Triggers
+            - Time based triggers
+                - X secs after display
+                - Countdown timer completion
+            - User action based triggers
+                - Click based
+                    - Click on close button
+                    - Click outside modal
+                    - Click on specific element in the background
+                - Keyboard based
+                    - Esc. key press
+                    - Enter/return key press
+                    - Any key
+            - Navigation based triggers
+                - Page change successfully detected
+                - Navigation to a specific url detected
+            - State change triggers
+                - Profile successfully updated
+                - Product successfully added
+                    - To Order (Post purchase flows)
+                    - To cart
+                    - To wishlist
+                - Product successfully removed
+                    - From cart
+                    - From wishlist
+                - Promo code
+                    - successfully applied
+                    - successfully copied
+                - Successful login
+            - Page based triggers
+                - Page refreshed
+                - Scroll to specific element in the page
+                - Scroll past pop up
+                - Scroll to page bottom
+            - Other pop up trigger detected
+        - Types
+            - Permanent dismissal
+                - Session based
+                - User based
+            - Temporary dismissal
+                - Collapse into preview
+                - Re-appearence trigger
+    - Animations
+        - Entrance
+        - Exit
+        - User action based
+            - Microanimations
+            - Transfer animations
+        - Time based
+    - Gestures
+        - Swipe (Up/Down/Top/Bottom)
+        - Double tap/Double click
+        - Click
+            - Outside the modal
+            - Button Click
+        - Pinch in/pinch out
+        - Long press
+        - Shake device to reveal pop up contents
+    - Pop up Placement
+        - W.r.t view port
+        - W.r.t page
+        - W.r.t preview
+    - Overlay Settings
+        - Non-interactive background (lightbox pop up)
+            - Background colour specification
+            - Configurable transparency
+            - Background asset display
+                - Image
+                - Video
+                - GIF 
+        - Interactable background elements
+            - Sticky/Fixed
+            - Scroll bound (Moves in/Out with page scroll)
+        - Layering capabilities (Z index)
+            - w.r.t other pop ups
+            - w.r.t other core ecommerce elements 
+                - Cart drawer
+                - Search drawer
+                - Sticky ATC/View cart buttons
+                - Navigation menus: Hamburger/MM
+    - Pop up Previews
+        - Types
+            - Text
+            - Assets
+            - Dynamic contents
+        - Interaction types
+            - Click to view pop up
+            - Double tap to view pop up
+            - Press and hold
+                - to play preview contents
+                - to view pop up and view content
+        - Placement & Positioning
+            - Placement
+                - Inline
+                - Floating
+                    - Sticky
+                    - Scroll bound
+            - Positioning
+                - Absolute positioning
+                - Context aware positioning
+                    - W.r.t Parent page
+                    - W.r.t other overlays in the same area
+        - Layering capabilities (Z index)
+            - w.r.t other core ecommerce elements 
+                - Cart drawer
+                - Search drawer
+                - Sticky ATC/View cart buttons
+                - Navigation menus: Hamburger/MM
+            - w.r.t other pop up previews
+            - w.r.t other pop ups
+        - Visibility
+            - Visible for certain parent pop up/entity states only
+                - Parent pop up open/closed
+                    - Visible even when pop up is open
+                    - Not visible when pop up is open
+                - Cart/wishlist state
+        - Display triggers
+            - Will show up when the parent pop up display is triggered
+        - Animation support
+        - Supported actions
+            - Drag to reposition
+    - Progress Storage (Pop up series)
+        - Ability to enable/disable progress storage
+    - Data recall
+        - Account identifier information
+        - Any data provided in the earlier pop ups
+- Use Cases
+    - Acquistion
+        - Promotion awareness pop ups
+            - Nth visit
+            - Season based promotions
+            - Time bound promotions
+            - ..
+        - User onboarding pop ups
+            - Account creation
+            - Social media follow
+        - User profile details input pop up
+        - Referral credit info. pop up
+        - Gamification pop ups
+        - App download pop up
+        - Collection redirection pop up
+        - FTUE Pop ups
+        - Cookie pref. pop ups
+    - Exploration 
+        - Product comparison pop ups
+        - Quick filter pop ups
+        - Inventory callout pop ups
+        - Price drop pop ups
+        - Product discount pop ups
+        - Addn. info display pop ups
+            - Social proof 
+            - Product highlights
+        - Exit intent pop ups
+    - Conversion
+        - Cart abandonment pop ups
+        - Cart promotion timer pop up
+        - OOS products pop up
+        - Cartline removal confirmation pop up
+        - PG Auth Pop ups
+        - Fomo/Urgency lever pop ups
+            - Live purchases pop up
+- Integrations
+    - Journey
+    - CMS
+    - User profile table
+    - Recommendation engine
+    - Promotions engine
+    - Quiz engine
+    - Gamification engine
+    - Auth flow
+    - CC Chatbot
+    - Size charts
+    - Rewards engine
+    - APIs
+        - Shopify Cart
+        - TP Integrations
+- Pop up builder requirements
+    - Content
+        - Static
+            - Asset
+            - Text
+                - Display
+                - Clickable
+            - Input fields
+            - Buttons
+                - Toggles
+                - Checkbox
+                - Radio
+                - Sliders
+                - ...
+        - Dynamic
+            - Product List
+            - Coupon list
+            - Quick filters list
+            - Timers/FOMO Widgets
+            - Gamification Widgets
+            - Reviews list
+        - Source
+            - TP Int.
+            - CMS
+            - Other Growth levers
+        - Validation support
+            - Input fields
+    - Paginated pop ups support
+    - Pop up stack support
+    - Pop up background settings
+    - Position and Placement control
+        - Preview
+        - Pop up
+        - Drag and Drop position specification
+        - Drag and resposition specfication
+    - Transitions and Animations
+        - Pop up transition support (Entrance/Exit animation)
+        - Feedback/State change animations
+            - Transfer animation
+            - Erronous input animation
+        - Recurring animations
+            - Time bound
+    - Gesture support
+        - View/Collapse Pop up
+        - View next pop up
+        - Custom actions
+    - Real time content update
+        - Pop up preview <> Pop up contents
+    - Previews <> Parent pop up mapping
+    - Pop up states
+        - Definition
+        - Storage
+    - Z-index rule definition
