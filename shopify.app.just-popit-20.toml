@@ -2,7 +2,7 @@
 
 client_id = "a0f8d7e4fef49a71af18c8f70f742d37"
 name = "Just-PopIt 2.0"
-application_url = "https://library-table-nhs-assistant.trycloudflare.com"
+application_url = "https://subliminal-homer-compliably.ngrok-free.dev"
 embedded = true
 
 [build]
@@ -19,7 +19,7 @@ use_legacy_install_flow = false
 
 [auth]
 redirect_urls = [
-  "https://library-table-nhs-assistant.trycloudflare.com/api/auth",
-  "https://library-table-nhs-assistant.trycloudflare.com/api/auth/callback",
-  "https://library-table-nhs-assistant.trycloudflare.com/auth/callback"
+  "https://subliminal-homer-compliably.ngrok-free.dev/api/auth",
+  "https://subliminal-homer-compliably.ngrok-free.dev/api/auth/callback",
+  "https://subliminal-homer-compliably.ngrok-free.dev/auth/callback"
 ]
